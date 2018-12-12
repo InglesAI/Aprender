@@ -22,7 +22,7 @@ html{
 }
 body {
   color: #6f7b8a;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   font-size:13px;
   padding: 0px !important;
   margin: 0px !important;
@@ -85,7 +85,7 @@ position:absolute;
 
 .compressed .navbar-nav > li > a{
 	margin: 11px 25px;
-	font-family: "Open Sans","Helvetica","Arial";
+	font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 	text-transform:uppercase;
 	letter-spacing:0.8;
 	font-size: 0.875em;
@@ -118,7 +118,7 @@ position:absolute;
 }
 .navbar-transparent .navbar-nav > li > a{
 	color: #fff;
-	font-family: "Open Sans","Helvetica","Arial";
+	font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 	text-transform:uppercase;
 	letter-spacing:0.8;
 	font-size: 0.875em;
@@ -132,7 +132,7 @@ position:absolute;
 }
 .navbar-nav > li > a{
 	color: #909296;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 	font-weight:bold;
 }
 
@@ -193,7 +193,7 @@ h4{
 	font-size:16px;
 }
 h3 small, h4 small, h5 small {
- font-family: 'Open Sans';
+ font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   font-weight: 300;
   color: #444;
 }
@@ -202,7 +202,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 	font-size: 62%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans';
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   font-weight: 300;
   color:#505458;
 }
@@ -571,7 +571,7 @@ hr {
 	display:inline-block;
 }
 .custom-font{
-	  font-family: 'Montserrat', sans-serif;
+	  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 	  letter-spacing: 0.8px;
 }
 img.resize{
@@ -1627,7 +1627,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   -webkit-appearance: none !important;
 	color: #282323
   outline: 0;
@@ -2402,7 +2402,7 @@ form legend,
 .pricing .plan h4 {
 	padding: 40px 0;
 	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family:'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 }
 .pricing .plan:hover h4 .amount, .pricing .plan:hover h4 .amount span, .pricing .plan:hover h3 {
 	color:#fff!important;
@@ -2473,12 +2473,12 @@ form legend,
 	width:100%;
 }
 .slider .title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   font-weight: 400;
 	margin-bottom:0.5em;
 }
 .slider .btn{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 	font-size:20px;
 	font-weight:bold;
 }
@@ -2526,7 +2526,7 @@ form legend,
 /***  ***/
 
 .feature-list .title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 font-weight: bold;
 font-size: 14px;
 letter-spacing: 1px;
@@ -2716,7 +2716,7 @@ letter-spacing: 1px;
 }
 .portfolio-grid li .project-title {
 	opacity:0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
 font-weight: bold;
 font-size: 14px;
 letter-spacing: 1px;
@@ -2874,7 +2874,7 @@ margin-bottom:0px;
 
 .team-details span {
   font-size: 13px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;
   color: #9e9e9e;
 }
 
@@ -3124,7 +3124,7 @@ margin-bottom:0px;
 }
 
 .contact-details .widget .meta {
-	font-family:Georgia, "Times New Roman", Times, serif;
+	font-family:Georgia, "Times New Roman", Times, serif, 'Kalam', cursive,'Patrick Hand', cursive,'Roboto Slab', serif,'Noto Serif SC', serif;;
 	font-size:14px;
 	color:#3c3c3c;
 	font-style:normal!important;
