@@ -5,7 +5,7 @@
 html {
   height: 100%;
   overflow: hidden;
-  width: 100%;
+    width: 100%;
 }
 
 body {
@@ -83,10 +83,12 @@ body {
   position: absolute;
 }
 
+#grid-row reverse video-gallery {padding: 40}
+
 .grid-row {
   display: block;
   height: 56vw;
-  max-height: 30.5em;
+  max-height: 35.5em;
   position: relative;
 }
 .grid-row label {
