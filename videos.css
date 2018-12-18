@@ -5,7 +5,7 @@
 html {
   height: 100%;
   overflow: hidden;
-    width: 100%;
+  width: 100%;
 }
 
 body {
@@ -28,8 +28,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 150%;
+  width: 150%;
   min-height: 0;
 }
 
@@ -44,7 +44,7 @@ body {
   grid-column-start: 1;
   grid-row-start: 1;
   grid-row-end: 7;
-  max-height: 34.5em;
+  max-height: 19.5em;
   opacity: 0;
   transition: all 300ms ease;
 }
@@ -83,13 +83,11 @@ body {
   position: absolute;
 }
 
-#grid-row reverse video-gallery {padding: 40}
-
 .grid-row {
   display: block;
   height: 56vw;
-  max-height: 35.5em;
-  position: relative;
+  max-height: 33.5em;
+     position: relative;
 }
 .grid-row label {
   left: calc(50% + 16px);
@@ -108,7 +106,7 @@ body {
   display: table;
 }
 
-#video-1:checked ~ .video-1, #video-2:checked ~ .video-2, #video-3:checked ~ .video-3, #video-4:checked ~ .video-4, #video-5:checked ~ .video-5, #video-6:checked ~ .video-6, #video-7:checked ~ .video-7, #video-8:checked ~ .video-8, #video-9:checked ~ .video-9, #video-10:checked ~ .video-10 {
+#video-1:checked ~ .video-1, #video-2:checked ~ .video-2, #video-3:checked ~ .video-3, #video-4:checked ~ .video-4, #video-5:checked ~ .video-5, #video-6:checked ~ .video-6 {
   animation: 1200ms fadeIn ease;
   animation-fill-mode: both;
   opacity: 1;
@@ -171,13 +169,13 @@ body {
     display: grid;
     grid-column-gap: 16px;
     grid-row-gap: 0;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
   }
   .grid-row label {
-    left: auto;
-    width: 100%;
+    left: cover;
+    width: 40%;
   }
   .grid-row .video {
     position: relative;
@@ -244,7 +242,7 @@ body {
   .video-gallery label {
     left: auto;
     order: 2;
-    width: 100%;
+    width: 0%;
   }
   .video-gallery .video {
     order: 1;
@@ -301,4 +299,7 @@ body {
       opacity: 1;
     }
   }
+}
+.section white{
+  padding-bottom: absolute;
 }
