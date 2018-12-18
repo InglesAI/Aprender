@@ -87,7 +87,7 @@ body {
   display: block;
   height: 56vw;
   max-height: 33.5em;
-     position: relative;
+  position: relative;
 }
 .grid-row label {
   left: calc(50% + 16px);
@@ -299,7 +299,4 @@ body {
       opacity: 1;
     }
   }
-}
-.section white{
-  padding-bottom: absolute;
 }
