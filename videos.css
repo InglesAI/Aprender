@@ -28,7 +28,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 150%;
+  height: 165%;
   width: 150%;
   min-height: 0;
 }
@@ -87,7 +87,8 @@ body {
   display: block;
   height: 56vw;
   max-height: 33.5em;
-  position: relative;
+     position: relative;
+
 }
 .grid-row label {
   left: calc(50% + 16px);
@@ -167,6 +168,7 @@ body {
   .grid-row {
     align-items: start;
     display: grid;
+    padding-left: 4%;
     grid-column-gap: 16px;
     grid-row-gap: 0;
     grid-template-columns: 1fr 1fr;
@@ -299,4 +301,7 @@ body {
       opacity: 1;
     }
   }
+}
+.section white{
+  padding-bottom: absolute;
 }
