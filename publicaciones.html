@@ -1,457 +1,431 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta charset="utf-8" />
-    <title>InglesAI-Publicaciones</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.theme.css" />
-    <link rel="stylesheet" type="text/css" href="assets/plugins/headereffects/css/component.css">
-    <link rel="stylesheet" type="text/css" href="assets/plugins/headereffects/css/normalize.css" />
-    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css"
-        media="screen" />
-    <!-- BEGIN CORE CSS FRAMEWORK -->
-    <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-        type="text/css" />
-    <!-- END CORE CSS FRAMEWORK -->
-    <!-- BEGIN CSS TEMPLATE -->
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/magic_space.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css" />
-    <!-- END CSS TEMPLATE -->
-</head>
-<!-- END HEAD -->
-<body>
-    <div class="main-wrapper">
-        <div role="navigation" class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="compressed">
-                    <div class="navbar-header">
-                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle"
-                            type="button">
-                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
-                                class="icon-bar"></span><span class="icon-bar"></span>
-                        </button>
-                        <a href="#" class="navbar-brand compressed">
-                            <img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png"
-                                data-src-retina="assets/img/logo2x.png" width="119" height="22" /></a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.html">Indice</a></li>
-                            <li><a href="publicaciones.html">Publicaciones</a></li>
-                            <li><a href="videos.html">Videos</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-            </div>
+<!-- google fonts-->
+<link href='https://fonts.googleapis.com/css?family=Leckerli+One|Metrophobic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="publicaciones.css">
+<script>var gallery = (function(){
+
+  'use strict';
+
+  // vars
+  var gal_item = $('.gallery_item'),
+      gal_img = $('.gallery_item_preview a img'),
+      gal_full = $('.gallery_item_full'),
+      gal_box = $('.box'),
+      gal_top =  $('.gallery_top');
+
+
+  return {
+    // this.js(obj)
+    js: function(e){return $("[data-js="+e+"]");},
+    // this.lk(obj)
+    lk: function(e){return $("[data-lk="+e+"]");},
+    // Ready functions
+    ready_: function(){this.events();},
+    //  functions
+    events:function(){
+      var self = this;
+      // add close link
+      gal_full.append('<a href="#" data-js="cl" class="cl">X</a>');
+      // Get all data js and add clickOn function
+      var k = $('a[data-js]');
+      k.each(function(i, v){
+        i = i+1;
+        self.clickOn(i);
+      });
+      // close on click
+      self.js('cl').on("click",function(e){
+        e.preventDefault();
+        self.fx_out(gal_full);
+        self.fx_out(gal_box);
+      });
+
+      // list style
+      self.js('list').on("click",function(e){
+        e.preventDefault();
+        // toggle class
+        gal_item.toggleClass('gallery_item_list');
+        gal_img.toggleClass('gallery_line');
+
+
+        // change icon style
+        if(gal_item.hasClass('gallery_item_list')){
+          $(this).addClass('icon_list_open')
+          .html('<span>•••</span>'+
+                '<span>•••</span>'+
+                '<span>•••</span>');
+          gal_top.attr("class", "gallery_top gallery_hide_top");
+        }else{
+          $(this).removeClass('icon_list_open')
+          .html('<span>• -</span>'+
+                '<span>• -</span>'+
+                '<span>• -</span>');
+          gal_top.attr("class", "gallery_top");
+        }
+      });
+    },
+    // Show on click
+    clickOn: function(i){
+      var self = this;
+      this.js(i).on('click',function(e){
+        e.preventDefault();
+        self.fx_in(self.lk(i));
+        self.fx_in(gal_box);
+      });
+    },
+    // out function
+    fx_out: function(el){
+      el.addClass('efOut')
+      .delay(500)
+      .fadeOut('fast')
+      .removeClass('efIn');
+      // show scroll
+      $('body').css({overflow:'auto'});
+      return false;
+    },
+    // in function
+    fx_in: function(el){
+      el.removeClass('efOut')
+      .show(200)
+      .addClass('efIn');
+      // hide scroll
+      $('body').css({overflow:'hidden'});
+      return false;
+    }
+  };
+})();
+// ready function of gallery
+gallery.ready_();
+</script>
+<a href="#" class="icon_list" data-js="list">
+  <span>• -</span>
+  <span>• -</span>
+  <span>• -</span>
+</a>
+
+<div class="wrapper">
+  <div class="wrapper_inner">
+    <!-- Gallery -->
+    <section class="gallery">
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="1">
+
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+
+            <img src="https://25.media.tumblr.com/1adc4029ef3a31124f222add70fa3553/tumblr_n2k1499dIp1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span>
+          </a>
+
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="1" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/1adc4029ef3a31124f222add70fa3553/tumblr_n2k1499dIp1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
         </div>
-        <div class="section first white">
-            <div class=" p-b-60">
-                <div class="section grey p-t-20  p-b-20 m-b-50">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h2>
-                                    Publicaciones</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="portfolio-grid portfolioContainer ">
-                        <ul id="thumbs" class="col3">
-                          <div class="clearfix">
-                          </div>
-                      </li>
-                      <li class="item branding">
-                          <div class="portfolio-image-wrapper">
-                              <img src="new/yo-aspiracional-300x179.jpg" alt="" />
-                              <div class="item-info-overlay">
-                                  <div>
-                                      <a href="https://inglesai.000webhostapp.com/2018/10/personal-pronouns-pronombres-personales" class="overlay-link"></a>
-                                      <h3 class="text-white semi-bold p-t-60 project-title ">
-                                          Personal pronouns</h3>
-                                      <p class="project-description">
-                                          Creative</p>
-                                  </div>
-                              </div>
-                              <!--END ITEM-INFO-OVERLAY-->
-                          </div>
-                          <div class="item-info">
-                              <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                  Personal pronouns</h4>
-                              <p>
-                                  December 20</p>
-                          </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item web">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/4.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Business Card</h3>
-                                            <p class="project-description">
-                                                Printing Project</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Business Card</h4>
-                                    <p>
-                                        April 22</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item photo">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/5.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Website design</h3>
-                                            <p class="project-description">
-                                                Creative Responsive Website</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Website design</h4>
-                                    <p>
-                                        April 25</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item branding">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/6.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Branding/Logo Design</h3>
-                                            <p class="project-description">
-                                                Company rebranding</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Branding/Logo Design</h4>
-                                    <p>
-                                        May 04</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item logo">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/7.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Logo Design</h3>
-                                            <p class="project-description">
-                                                A Logo</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Logo Design</h4>
-                                    <p>
-                                        May 04</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item logo">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/8.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Logo Design</h3>
-                                            <p class="project-description">
-                                                Logo Design & Pallete</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Logo Design</h4>
-                                    <p>
-                                        July 16</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item web">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/9.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Dribbble Meetup</h3>
-                                            <p class="project-description">
-                                                Invitation Artwork</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Dribbble Meetup</h4>
-                                    <p>
-                                        July 22</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item web">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/10.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Freehand</h3>
-                                            <p class="project-description">
-                                                Creative</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Freehand</h4>
-                                    <p>
-                                        July 28</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item web">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/11.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Abstract 3D</h3>
-                                            <p class="project-description">
-                                                Abstract</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Abstract 3D</h4>
-                                    <p>
-                                        August 14</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                            <li class="item web">
-                                <div class="portfolio-image-wrapper">
-                                    <img src="assets/img/gallery/12.jpg" alt="" />
-                                    <div class="item-info-overlay">
-                                        <div>
-                                            <h3 class="text-white semi-bold p-t-60 project-title ">
-                                                Analytical Website</h3>
-                                            <p class="project-description">
-                                                Responsive website</p>
-                                        </div>
-                                    </div>
-                                    <!--END ITEM-INFO-OVERLAY-->
-                                </div>
-                                <div class="item-info">
-                                    <h4 class="text-dark no-margin p-t-10 title semi-bold">
-                                        Analytical Website</h4>
-                                    <p>
-                                        December 31</p>
-                                </div>
-                                <!--END ITEM-INFO-->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      </div>
+
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="2">
+            <svg fill="#5690F7" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple Video</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="2" class="gallery_item_full">
+          <div class="box">
+
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/gLg6qxkQ94A"></iframe>
             </div>
+
+            <h3>Example Youtube video</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
         </div>
-        <div class="section grey">
-            <div class="container">
-                <div class="p-t-60 p-b-50">
-                    <div id="testomonials" class="owl-carousel row">
-                        <div class="item">
-                            <div class="col-md-6  col-md-offset-3 text-center">
-                                <div class="testimonial-thumb">
-                                    <img src="assets/img/testimonial_img1.png" alt="testimonal">
-                                </div>
-                                <div class="testimonial-user">
-                                    <span>John Donga</span> Greepit.com
-                                </div>
-                                <h3 class="normal text-center">
-                                    I have always received good service from the Frittt Templates. Timing and quality
-                                    have always met my expectations and everything is communicated in a professional
-                                    and timely manner.
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-6   col-md-offset-3 text-center">
-                                <div class="testimonial-thumb">
-                                    <img src="assets/img/testimonial_img2.png" alt="testimonal">
-                                </div>
-                                <div class="testimonial-user">
-                                    <span>John Donga</span> Frittt.com
-                                </div>
-                                <h3 class="normal text-center">
-                                    We consider the Frittt Templates team a development partner who has proven to be
-                                    creative in problem resolution, reliable in time commitments, and overall consistent
-                                    in meeting our expectations.
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-6   col-md-offset-3 text-center">
-                                <div class="testimonial-thumb">
-                                    <img src="assets/img/testimonial_img3.png" alt="testimonal">
-                                </div>
-                                <div class="testimonial-user">
-                                    <span>John Donga</span> www.Frittt.com
-                                </div>
-                                <h3 class="semi-bold text-center">
-                                    The work was above and beyond what I could have expected. Excellent service all
-                                    the way around from start to finish. Keep up the GREAT work! Great job!
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="3">
+            <svg fill="#5690F7" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/5c73892a883adf41e9b8b7fe807e19b8/tumblr_n2k10foRBd1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple Video 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="3" class="gallery_item_full">
+          <div class="box">
+            <div class="video">
+              <iframe src="//player.vimeo.com/video/89918113"></iframe>
             </div>
+            <h3>Example Vimeo video</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
         </div>
-        <div class="section black contact-details green-icons">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 text-center">
-                        <div class="services-box-3">
-                            <i class="fa fa-phone"></i>
-                            <div class="content">
-                                <p>
-                                    Phone</p>
-                                <h3>
-                                    +1 555 666 9999</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="services-box-3">
-                            <i class="fa fa-envelope"></i>
-                            <div class="content">
-                                <p>
-                                    E-mail</p>
-                                <h3>
-                                    letstalk@thempleite.com</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="services-box-3">
-                            <i class="fa fa-map-marker "></i>
-                            <div class="content">
-                                <p>
-                                    Postal</p>
-                                <h3>
-                                    32-Grey Suite, NY</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="services-box-3">
-                            <i class="fa fa-pinterest-square"></i>
-                            <div class="content">
-                                <p>
-                                    Pinterest</p>
-                                <h3>
-                                    pinterest.com/frittt</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="4">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="4" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/72ff371588fd911cf7725394740c62a0/tumblr_n2k15mq4xy1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
         </div>
-        <div class="section white footer">
-            <div class="container">
-                <div class="p-t-30 p-b-50">
-                    <div class="row">
-                        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12 xs-m-b-20">
-                            <img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png"
-                                data-src-retina="assets/img/logo2x.png" width="119" height="22" />
-                            <br />
-                            <br />
-                            © Frittt Templates.
-                            <br />
-                            All Rights Reserved.
-                        </div>
-                        <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
-                            <address class="xs-no-padding  col-md-6 col-lg-6 col-sm-6  col-xs-12">
-                                32 - Grey Suite<br>
-                                Odd Street,<br>
-                                NY, USA.
-                            </address>
-                            <div class="xs-no-padding col-md-6 col-lg-6 col-sm-6">
-                                <div>
-                                    (1) 555 666 9999</div>
-                                <a href="javascript:">letstalk@thempleite.com</a>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
-                            <div class="bold">
-                                We Are Hiring</div>
-                            Send you resume at <a href="javascript:">careers@thempleite.com</a>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 ">
-                            <div class="bold">
-                                FOLLOW US</div>
-                            <br />
-                            <a href="javascript:"><i class="fa fa-facebook fa-2x"></i></a>&nbsp; <a href="javascript:">
-                                <i class="fa fa-twitter fa-2x"></i></a>&nbsp; <a href="javascript:"><i class="fa fa-youtube-play  fa-2x">
-                                </i></a>&nbsp; <a href="javascript:"><i class="fa fa-github fa-2x"></i></a>&nbsp;
-                            <a href="javascript:"><i class="fa fa-dribbble fa-2x"></i></a>&nbsp; <a href="javascript:">
-                                <i class="fa fa-pinterest fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="5">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="5" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/e615708905cc9df81f901c06ae4afe1e/tumblr_n21ltnVLtz1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
         </div>
-    </div>
-    <!-- BEGIN CORE JS FRAMEWORK -->
-    <script type="text/javascript" src="assets/plugins/jquery-1.8.3.min.js"></script>
-    <script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- END CORE JS FRAMEWORK -->
-    <!-- BEGIN JS PLUGIN -->
-    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
-    <script src="assets/plugins/waypoints.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-nicescroll/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-isotope/jquery.isotope.js"></script>
-    <!-- END JS PLUGIN -->
-    <script type="text/javascript" src="assets/js/core.js"></script>
-</body>
-</html>
+      </div>
+
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="6">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/6c0e95d27b8509096274f244ff5aeea9/tumblr_n21lusI21V1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="6" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/6c0e95d27b8509096274f244ff5aeea9/tumblr_n21lusI21V1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="7">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/bb592565a7d8c4f004973fe3045cac6f/tumblr_n21lvqbJ2m1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="7" class="gallery_item_full">
+          <div class="box">
+            <img src="https://24.media.tumblr.com/bb592565a7d8c4f004973fe3045cac6f/tumblr_n21lvqbJ2m1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="8">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/0a4075c0b36aa37ddbd85d4e75afbeca/tumblr_n21lwpVo3F1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="8" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/0a4075c0b36aa37ddbd85d4e75afbeca/tumblr_n21lwpVo3F1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="9">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 175.81699,28.832771 176.47059,0.72819569 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/40b727a4d9ea5164103d81590bde4ef6/tumblr_n2k0y8bxXE1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="9" class="gallery_item_full">
+          <div class="box">
+            <img src="https://24.media.tumblr.com/40b727a4d9ea5164103d81590bde4ef6/tumblr_n2k0y8bxXE1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="10">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="10" class="gallery_item_full">
+          <div class="box">
+            <img src="https://25.media.tumblr.com/b8fd8b5382cce0e5be44bd1245ea2cf4/tumblr_n2k138YEtG1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="11">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/f74ff1d9acdf8c43cd1897e01bc669e6/tumblr_n2k114hDQX1st5lhmo1_1280.jpg" alt="" /><span>
+            <h3>Exmaple photo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.</p>
+
+            </span></a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="11" class="gallery_item_full">
+          <div class="box">
+            <img src="https://24.media.tumblr.com/f74ff1d9acdf8c43cd1897e01bc669e6/tumblr_n2k114hDQX1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Gallery  item -->
+      <div class="gallery_item">
+        <!-- Gallery  item preview -->
+        <span class="gallery_item_preview">
+          <a href="#" data-js="12">
+            <svg fill="#f55" class="gallery_top" viewbox="0 3 60 20">
+              <path d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"></path>
+            </svg>
+            <img src="https://24.media.tumblr.com/57a652bfb91e06d3d1f596c0aa5f7871/tumblr_n2k120WsWM1st5lhmo1_1280.jpg" alt="" />
+            <span>
+              <h3>Exmaple photo</h3>
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </a>
+        </span>
+        <!-- Gallery  item full -->
+        <div data-lk="12" class="gallery_item_full">
+          <div class="box">
+            <img src="https://24.media.tumblr.com/57a652bfb91e06d3d1f596c0aa5f7871/tumblr_n2k120WsWM1st5lhmo1_1280.jpg" alt="" />
+            <h3>Example image</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore rem minima saepe itaque animi fuga consequuntur. Praesentium dolorum neque autem nihil nobis quam animi ullam eos tempora quia eius aliquid?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
